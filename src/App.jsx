@@ -2,6 +2,7 @@ import { useState } from "react";
 import Card from "./components/Card";
 import About from "./components/About";
 import Summary from "./components/Summary";
+import Contact from "./components/Contact"
 
 function App() {
   const [active, setActive] = useState("");
