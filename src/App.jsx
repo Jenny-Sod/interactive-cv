@@ -4,6 +4,7 @@ import About from "./components/About";
 
 function App() {
   const [active, setActive] = useState("");
+  const [selectedCard, setSelectedCard] = useState(null)
 
   return (
     <div className="layout">
@@ -16,22 +17,25 @@ function App() {
       {/* Cards */}
       <div className="right">
       <div className="container">
-        <Card title="Om mig" onClick={() => setActive("about")} />
-        <Card title="Arbetslivserfarenhet" onClick={() => setActive("experience")} />
-          <Card title="Utbildning" onClick={() => setActive("education")} />
-        <Card title="Teknik" onClick={() => setActive("skills")} />
-        <Card title="Kontakt" onClick={() => setActive("contact")} />
+        <Card title="Om mig" onClick={() => setSelectedCard("about")} />
+        <Card title="Arbetslivserfarenhet" onClick={() => setSelectedCard("experience")} />
+          <Card title="Utbildning" onClick={() => setSelectedCard("education")} />
+        <Card title="Teknik" onClick={() => setSelectedCard("skills")} />
+        <Card title="Kontakt" onClick={() => setSelectedCard("contact")} />
       </div>
       </div>
 
-      {/* Content */}
-      <div>
-        {active === "about" && <About />}
-        {active === "experience" && <p>Work, work, work</p>}
-        {active === "education" && <p>Utbildning</p>}
-        {active === "skills" && <p>Vilka tekniker kan jag?</p>}
-        {active === "contact" && <p>Call me baby</p>}
-      </div>
+      {selectedCard && (
+  <div className="modal-overlay" onClick={() => setSelectedCard(null)}>
+    <div className="modal" onClick={(e) => e.stopPropagation()}>
+      {selectedCard === "about" && <About />}
+      {selectedCard === "experience" && <Experience />}
+      {selectedCard === "education" && <Education />}
+      {selectedCard === "skills" && <Skills />}
+      {selectedCard === "contact" && <Contact />}
+    </div>
+  </div>
+)}
     </div>
   );
 }
