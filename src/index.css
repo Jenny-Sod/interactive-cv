@@ -1,26 +1,36 @@
 body {
   margin: 0;
+  padding: 40px 20px;
   font-family: sans-serif;
-  background: #1a1a1a;
-  color: white;
+  background: #F9F8F8;
 }
 
 .layout {
   display: flex;
   min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+font-family: "Limelight", sans-serif;
 }
 
 /* Vänster sida */
 .left {
-  flex: 1;
-  padding: 60px;
-  background: rgba(0, 0, 0, 0.6);
+  flex: 0.8;
+  padding: 60px 40px;
+  background-image: url("https://images.unsplash.com/vector-1748759593725-1f9a2e78ed24?q=80&w=880&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Höger sida */
 .right {
-  flex: 2;
-  padding: 60px;
+  flex: 2.2;
+  padding: 60px 40px;
 }
 
 /* Cards */
@@ -31,20 +41,25 @@ body {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   border-radius: 16px;
   cursor: pointer;
   backdrop-filter: blur(10px);
   transition: 0.2s;
   cursor: pointer;
+  color: #fff;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  transform: scale(1.03);
+  transform: translateY(-5px) scale(1.03);
   transition: 0.2s;
 }
+
+.card:nth-child(1) { background: #6b5cff; }  /* lila */
+.card:nth-child(2) { background: #f59e0b; }  /* gul/orange */
+.card:nth-child(3) { background: #ef4444; }  /* röd */
+.card:nth-child(4) { background: #3b82f6; }  /* blå */
+.card:nth-child(5) { background: #10b981; }  /* grön */
 
 .modal-overlay {
   position: fixed;
