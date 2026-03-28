@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Card from "./components/Card";
 import About from "./components/About";
+import Summary from "./components/Summary";
 
 function App() {
   const [active, setActive] = useState("");
@@ -10,10 +11,8 @@ function App() {
     <div className="layout">
       <div className="left">
       <h1>Jenny Söderström</h1>
-      <div className="summary-box">
-       <p>Frontendutvecklare med ett stort intresse för UX och användarvänliga lösningar. Jag drivs av att få saker att kännas intuitiva, snygga och faktiskt roliga att använda. Gillar att testa mig fram, lösa problem och samarbeta för att skapa lösningar som gör skillnad på riktigt.</p>
     {/* ev bild */}
-    </div>
+    <Summary />
       </div>
 
       {/* Cards */}
